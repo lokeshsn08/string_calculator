@@ -7,6 +7,11 @@ def add(numbers)
     end
     nums = numbers.split(/#{Regexp.escape(delimiter)}|\n/)
     negatives = nums.select { |num| num.to_i < 0 }
+
+    if negatives.any?
+        raise "Negative numbers not allowed: #{negatives.join(',')}"
+    end
+
     nums.map(&:to_i).inject(0) { |sum, num| num <= 1000 ? sum + num : sum }
 end
 puts add("")     
