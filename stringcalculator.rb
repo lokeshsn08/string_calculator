@@ -14,4 +14,9 @@ def add(numbers)
 
     nums.map(&:to_i).inject(0) { |sum, num| num <= 1000 ? sum + num : sum }
 end
-puts add("")     
+
+puts add("")          
+puts add("1")         
+puts add("1,5")      
+puts add("1\n2,3")   
+puts add("//;\n1;2") 
